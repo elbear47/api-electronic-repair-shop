@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ax1cM5BZVQ6XImlGFGPCZ6yxsLfZJC0kMtHrVdwkyJ0=",
+  "Source": "erTicketingApi",
+  "BasePath": "_content/erTicketingApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
