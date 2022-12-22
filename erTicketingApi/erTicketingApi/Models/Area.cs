@@ -16,10 +16,10 @@ namespace erTicketingApi.Models
         [MaxLength(50)]
         public string AreaName { get; set; }
 
-        [JsonIgnore]
-        public virtual List<Equipment> Equipments { get; set; }
-        [JsonIgnore]
-        public virtual List<CostCenter> CostCenters { get; set; }
+        //[JsonIgnore]
+        //public virtual List<Equipment> Equipments { get; set; }
+        //[JsonIgnore]
+        //public virtual List<CostCenter> CostCenters { get; set; }
 
 
     }

@@ -15,8 +15,9 @@ namespace erTicketingApi.Models
         public string EquipmentName { get; set; }
 
         //Foreign Key for Area
-        [JsonIgnore]
-        public Area Area { get; set; }
+        //[JsonIgnore]
+        public virtual Area Area { get; set; }
+        [ForeignKey("Area")]
         public int AreaId { get; set; }
         
 

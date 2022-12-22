@@ -11,55 +11,55 @@ namespace erTicketingApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CostCenterController : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly ElectronicRepairDbContext _context;
 
-        public CostCenterController(ElectronicRepairDbContext context)
+        public UserController(ElectronicRepairDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/CostCenter
+        // GET: api/User
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CostCenter>>> GetCostCenters()
+        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
-          if (_context.CostCenters == null)
+          if (_context.Users == null)
           {
               return NotFound();
           }
-            return await _context.CostCenters.ToListAsync();
+            return await _context.Users.ToListAsync();
         }
 
-        // GET: api/CostCenter/5
+        // GET: api/User/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<CostCenter>> GetCostCenter(int id)
+        public async Task<ActionResult<User>> GetUser(int id)
         {
-          if (_context.CostCenters == null)
+          if (_context.Users == null)
           {
               return NotFound();
           }
-            var costCenter = await _context.CostCenters.FindAsync(id);
+            var user = await _context.Users.FindAsync(id);
 
-            if (costCenter == null)
+            if (user == null)
             {
                 return NotFound();
             }
 
-            return costCenter;
+            return user;
         }
 
-        // PUT: api/CostCenter/5
+        // PUT: api/User/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCostCenter(int id, CostCenter costCenter)
+        public async Task<IActionResult> PutUser(int id, User user)
         {
-            if (id != costCenter.CostCenterId)
+            if (id != user.UserId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(costCenter).State = EntityState.Modified;
+            _context.Entry(user).State = EntityState.Modified;
 
             try
             {
@@ -67,7 +67,7 @@ namespace erTicketingApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CostCenterExists(id))
+                if (!UserExists(id))
                 {
                     return NotFound();
                 }
@@ -80,44 +80,44 @@ namespace erTicketingApi.Controllers
             return NoContent();
         }
 
-        // POST: api/CostCenter
+        // POST: api/User
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<CostCenter>> PostCostCenter(CostCenter costCenter)
+        public async Task<ActionResult<User>> PostUser(User user)
         {
-          if (_context.CostCenters == null)
+          if (_context.Users == null)
           {
-              return Problem("Entity set 'ElectronicRepairDbContext.CostCenters'  is null.");
+              return Problem("Entity set 'ElectronicRepairDbContext.Users'  is null.");
           }
-            _context.CostCenters.Add(costCenter);
+            _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCostCenter", new { id = costCenter.CostCenterId }, costCenter);
+            return CreatedAtAction("GetUser", new { id = user.UserId }, user);
         }
 
-        // DELETE: api/CostCenter/5
+        // DELETE: api/User/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCostCenter(int id)
+        public async Task<IActionResult> DeleteUser(int id)
         {
-            if (_context.CostCenters == null)
+            if (_context.Users == null)
             {
                 return NotFound();
             }
-            var costCenter = await _context.CostCenters.FindAsync(id);
-            if (costCenter == null)
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
             {
                 return NotFound();
             }
 
-            _context.CostCenters.Remove(costCenter);
+            _context.Users.Remove(user);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool CostCenterExists(int id)
+        private bool UserExists(int id)
         {
-            return (_context.CostCenters?.Any(e => e.CostCenterId == id)).GetValueOrDefault();
+            return (_context.Users?.Any(e => e.UserId == id)).GetValueOrDefault();
         }
     }
 }

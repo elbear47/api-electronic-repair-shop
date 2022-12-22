@@ -18,7 +18,7 @@ namespace erTicketingApi.Models
 
         //Foreign Key for Area
         [JsonIgnore]
-        public Area Area { get; set; }
+        public virtual Area Area { get; set; }
         public int AreaId { get; set; }
         
     }

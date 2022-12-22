@@ -11,6 +11,7 @@ namespace erTicketingApi.Models
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PostRepairDispoId { get; set; }
+
         [Required]
         public string DispoInfo { get; set; }
 

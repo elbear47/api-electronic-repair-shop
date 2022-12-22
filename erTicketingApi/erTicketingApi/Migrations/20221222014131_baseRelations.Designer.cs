@@ -12,8 +12,8 @@ using erTicketingApi.Controllers;
 namespace erTicketingApi.Migrations
 {
     [DbContext(typeof(ElectronicRepairDbContext))]
-    [Migration("20221221200615_baseRelationsSetup")]
-    partial class baseRelationsSetup
+    [Migration("20221222014131_baseRelations")]
+    partial class baseRelations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,7 +40,7 @@ namespace erTicketingApi.Migrations
 
                     b.HasKey("AreaId");
 
-                    b.ToTable("Areas");
+                    b.ToTable("areas", (string)null);
                 });
 
             modelBuilder.Entity("erTicketingApi.Models.CostCenter", b =>
@@ -63,7 +63,7 @@ namespace erTicketingApi.Migrations
 
                     b.HasIndex("AreaId");
 
-                    b.ToTable("CostCenters");
+                    b.ToTable("costCenters", (string)null);
                 });
 
             modelBuilder.Entity("erTicketingApi.Models.Equipment", b =>
@@ -85,7 +85,7 @@ namespace erTicketingApi.Migrations
 
                     b.HasIndex("AreaId");
 
-                    b.ToTable("Equipments");
+                    b.ToTable("equipments", (string)null);
                 });
 
             modelBuilder.Entity("erTicketingApi.Models.PostRepairDispo", b =>
@@ -102,7 +102,7 @@ namespace erTicketingApi.Migrations
 
                     b.HasKey("PostRepairDispoId");
 
-                    b.ToTable("PostRepairDispos");
+                    b.ToTable("postRepairDispos", (string)null);
                 });
 
             modelBuilder.Entity("erTicketingApi.Models.Ticket", b =>
@@ -169,7 +169,7 @@ namespace erTicketingApi.Migrations
 
                     b.HasKey("TicketId");
 
-                    b.ToTable("Tickets");
+                    b.ToTable("tickets", (string)null);
                 });
 
             modelBuilder.Entity("erTicketingApi.Models.User", b =>
@@ -205,13 +205,13 @@ namespace erTicketingApi.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Users");
+                    b.ToTable("users", (string)null);
                 });
 
             modelBuilder.Entity("erTicketingApi.Models.CostCenter", b =>
                 {
                     b.HasOne("erTicketingApi.Models.Area", "Area")
-                        .WithMany("CostCenters")
+                        .WithMany()
                         .HasForeignKey("AreaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -222,19 +222,12 @@ namespace erTicketingApi.Migrations
             modelBuilder.Entity("erTicketingApi.Models.Equipment", b =>
                 {
                     b.HasOne("erTicketingApi.Models.Area", "Area")
-                        .WithMany("Equipments")
+                        .WithMany()
                         .HasForeignKey("AreaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Area");
-                });
-
-            modelBuilder.Entity("erTicketingApi.Models.Area", b =>
-                {
-                    b.Navigation("CostCenters");
-
-                    b.Navigation("Equipments");
                 });
 #pragma warning restore 612, 618
         }

@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace erTicketingApi.Migrations
 {
     /// <inheritdoc />
-    public partial class baseRelationsSetup : Migration
+    public partial class baseRelations : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Areas",
+                name: "areas",
                 columns: table => new
                 {
                     AreaId = table.Column<int>(type: "int", nullable: false)
@@ -21,11 +21,11 @@ namespace erTicketingApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Areas", x => x.AreaId);
+                    table.PrimaryKey("PK_areas", x => x.AreaId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "PostRepairDispos",
+                name: "postRepairDispos",
                 columns: table => new
                 {
                     PostRepairDispoId = table.Column<int>(type: "int", nullable: false)
@@ -34,11 +34,11 @@ namespace erTicketingApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PostRepairDispos", x => x.PostRepairDispoId);
+                    table.PrimaryKey("PK_postRepairDispos", x => x.PostRepairDispoId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tickets",
+                name: "tickets",
                 columns: table => new
                 {
                     TicketId = table.Column<int>(type: "int", nullable: false)
@@ -62,11 +62,11 @@ namespace erTicketingApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tickets", x => x.TicketId);
+                    table.PrimaryKey("PK_tickets", x => x.TicketId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "users",
                 columns: table => new
                 {
                     UserId = table.Column<int>(type: "int", nullable: false)
@@ -79,11 +79,11 @@ namespace erTicketingApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.UserId);
+                    table.PrimaryKey("PK_users", x => x.UserId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "CostCenters",
+                name: "costCenters",
                 columns: table => new
                 {
                     CostCenterId = table.Column<int>(type: "int", nullable: false)
@@ -93,17 +93,17 @@ namespace erTicketingApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CostCenters", x => x.CostCenterId);
+                    table.PrimaryKey("PK_costCenters", x => x.CostCenterId);
                     table.ForeignKey(
-                        name: "FK_CostCenters_Areas_AreaId",
+                        name: "FK_costCenters_areas_AreaId",
                         column: x => x.AreaId,
-                        principalTable: "Areas",
+                        principalTable: "areas",
                         principalColumn: "AreaId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Equipments",
+                name: "equipments",
                 columns: table => new
                 {
                     EquipmentId = table.Column<int>(type: "int", nullable: false)
@@ -113,23 +113,23 @@ namespace erTicketingApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Equipments", x => x.EquipmentId);
+                    table.PrimaryKey("PK_equipments", x => x.EquipmentId);
                     table.ForeignKey(
-                        name: "FK_Equipments_Areas_AreaId",
+                        name: "FK_equipments_areas_AreaId",
                         column: x => x.AreaId,
-                        principalTable: "Areas",
+                        principalTable: "areas",
                         principalColumn: "AreaId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CostCenters_AreaId",
-                table: "CostCenters",
+                name: "IX_costCenters_AreaId",
+                table: "costCenters",
                 column: "AreaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Equipments_AreaId",
-                table: "Equipments",
+                name: "IX_equipments_AreaId",
+                table: "equipments",
                 column: "AreaId");
         }
 
@@ -137,22 +137,22 @@ namespace erTicketingApi.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CostCenters");
+                name: "costCenters");
 
             migrationBuilder.DropTable(
-                name: "Equipments");
+                name: "equipments");
 
             migrationBuilder.DropTable(
-                name: "PostRepairDispos");
+                name: "postRepairDispos");
 
             migrationBuilder.DropTable(
-                name: "Tickets");
+                name: "tickets");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "users");
 
             migrationBuilder.DropTable(
-                name: "Areas");
+                name: "areas");
         }
     }
 }
