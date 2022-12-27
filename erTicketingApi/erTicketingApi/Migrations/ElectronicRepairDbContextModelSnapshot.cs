@@ -110,23 +110,23 @@ namespace erTicketingApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TicketId"));
 
-                    b.Property<int>("AreaId")
+                    b.Property<int?>("AreaId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CostCenterId")
+                    b.Property<int?>("CostCenterId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateCompleted")
+                    b.Property<DateTime?>("DateCompleted")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateSubmitted")
+                    b.Property<DateTime?>("DateSubmitted")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DefectSymptom")
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
-                    b.Property<int>("EquipmentId")
+                    b.Property<int?>("EquipmentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Manufacturer")
@@ -140,7 +140,7 @@ namespace erTicketingApi.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("PostRepairDispoId")
+                    b.Property<int?>("PostRepairDispoId")
                         .HasColumnType("int");
 
                     b.Property<int>("Priority")
@@ -161,7 +161,7 @@ namespace erTicketingApi.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("TicketId");

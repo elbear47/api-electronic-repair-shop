@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace erTicketingApi.Migrations
 {
     /// <inheritdoc />
-    public partial class baseRelations : Migration
+    public partial class changesAfterFrontend : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -45,8 +45,8 @@ namespace erTicketingApi.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     Priority = table.Column<int>(type: "int", nullable: false),
-                    DateSubmitted = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DateCompleted = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DateSubmitted = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DateCompleted = table.Column<DateTime>(type: "datetime2", nullable: true),
                     NewPartCost = table.Column<double>(type: "float", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     DefectSymptom = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
@@ -54,11 +54,11 @@ namespace erTicketingApi.Migrations
                     Manufacturer = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: true),
                     RequesterComments = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
                     ResolutionNote = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    AreaId = table.Column<int>(type: "int", nullable: false),
-                    EquipmentId = table.Column<int>(type: "int", nullable: false),
-                    PostRepairDispoId = table.Column<int>(type: "int", nullable: false),
-                    CostCenterId = table.Column<int>(type: "int", nullable: false)
+                    UserId = table.Column<int>(type: "int", nullable: true),
+                    AreaId = table.Column<int>(type: "int", nullable: true),
+                    EquipmentId = table.Column<int>(type: "int", nullable: true),
+                    PostRepairDispoId = table.Column<int>(type: "int", nullable: true),
+                    CostCenterId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

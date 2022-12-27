@@ -83,7 +83,7 @@ namespace erTicketingApi.Controllers
         // POST: api/Ticket
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Ticket>> PostTicket(Ticket ticket)
+        public async Task<ActionResult<Ticket>> AddTicket(Ticket ticket)
         {
           if (_context.Tickets == null)
           {
