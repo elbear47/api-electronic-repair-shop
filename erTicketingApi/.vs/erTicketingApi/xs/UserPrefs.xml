@@ -1,24 +1,23 @@
 ﻿<Properties StartupConfiguration="{2C1D1071-8116-4DE8-B15C-07BAF8850657}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.erTicketingApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="erTicketingApi/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="erTicketingApi/Controllers/PostRepairDispoController.cs">
     <Files>
-      <File FileName="erTicketingApi/Models/Equipment.cs" Line="19" Column="23" />
-      <File FileName="erTicketingApi/ElectronicRepairDbContext.cs" Line="31" Column="77" />
-      <File FileName="erTicketingApi/Models/Area.cs" Line="11" Column="19" />
-      <File FileName="erTicketingApi/Models/CostCenter.cs" Line="20" Column="21" />
-      <File FileName="erTicketingApi/Models/PostRepairDispo.cs" Line="1" Column="1" />
-      <File FileName="erTicketingApi/Models/Ticket.cs" Line="1" Column="1" />
-      <File FileName="erTicketingApi/Models/User.cs" Line="1" Column="1" />
-      <File FileName="erTicketingApi/Program.cs" Line="1" Column="1" />
+      <File FileName="erTicketingApi/Controllers/EquipmentController.cs" Line="42" Column="71" />
+      <File FileName="erTicketingApi/Controllers/PostRepairDispoController.cs" Line="1" Column="1" />
+      <File FileName="erTicketingApi/Controllers/TicketController.cs" Line="41" Column="12" />
+      <File FileName="erTicketingApi/Program.cs" Line="48" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="erTicketingApi" expanded="True">
             <Node name="erTicketingApi" expanded="True">
-              <Node name="Models" expanded="True" />
-              <Node name="Program.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="PostRepairDispoController.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -28,9 +27,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.erTicketingApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

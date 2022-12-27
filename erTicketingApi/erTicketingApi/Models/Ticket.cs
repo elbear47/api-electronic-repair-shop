@@ -12,10 +12,10 @@ namespace erTicketingApi.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TicketId { get; set; }
 
-        public int Quantity { get; set; }
+        public int Quantity { get; set; } = 1; // default to one
         public int Priority { get; set; } = 3; // default to low priority
-        public DateTime DateSubmitted { get; set; }
-        public DateTime DateCompleted { get; set; }
+        public DateTime? DateSubmitted { get; set; } = DateTime.Now; // default to current datetime
+        public DateTime? DateCompleted { get; set; } = null; // default to null
         public double NewPartCost { get; set; }
 
         [MaxLength(100)]
@@ -37,19 +37,19 @@ namespace erTicketingApi.Models
         public string? ResolutionNote { get; set; }
 
         // reference UserId ( handle it in the controller)
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
 
         // reference AreaId ( handle it in the controller)
-        public int AreaId { get; set; }
+        public int? AreaId { get; set; }
 
         // reference EquipmentId ( handle it in the controller)
-        public int EquipmentId { get; set; }
+        public int? EquipmentId { get; set; }
 
         // reference PostRepairDispoId ( handle it in the controller)
-        public int PostRepairDispoId { get; set; }
+        public int? PostRepairDispoId { get; set; }
 
         // reference CostCenterId ( handle it in the controller)
-        public int CostCenterId { get; set; }
+        public int? CostCenterId { get; set; }
 
     }
 }

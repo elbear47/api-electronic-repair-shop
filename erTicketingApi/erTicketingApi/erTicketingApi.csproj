@@ -25,10 +25,12 @@
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
     <None Remove="Migrations\" />
     <None Remove="Controllers\" />
+    <None Remove="SeedDbScripts\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Migrations\" />
     <Folder Include="Controllers\" />
+    <Folder Include="SeedDbScripts\" />
   </ItemGroup>
 </Project>

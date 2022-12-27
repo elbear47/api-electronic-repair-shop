@@ -85,15 +85,17 @@ namespace erTicketingApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Area>> PostArea(Area area)
         {
-          if (_context.Areas == null)
-          {
-              return Problem("Entity set 'ElectronicRepairDbContext.Areas'  is null.");
-          }
+            if (_context.Areas == null)
+            {
+                return Problem("Entity set 'ElectronicRepairDbContext.Areas'  is null.");
+            }
             _context.Areas.Add(area);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetArea", new { id = area.AreaId }, area);
         }
+
+       
 
         // DELETE: api/Area/5
         [HttpDelete("{id}")]

@@ -31,6 +31,17 @@ namespace erTicketingApi.Controllers
             return await _context.Equipments.ToListAsync();
         }
 
+        // GET: api/Equipment
+        [HttpGet("getEquipByAreaId/{areaId}")]
+        public async Task<ActionResult<IEnumerable<Equipment>>> GetEquipByAreaId(int areaId)
+        {
+            if (_context.Equipments == null)
+            {
+                return NotFound();
+            }
+            return await _context.Equipments.Where(e => e.AreaId == areaId).ToListAsync();
+        }
+
         // GET: api/Equipment/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Equipment>> GetEquipment(int id)
